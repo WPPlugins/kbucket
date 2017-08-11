@@ -1,0 +1,229 @@
+/* Start with core styles outside of a media query that apply to mobile and up */
+/* Global typography and design elements, stacked containers */
+body { font-family: Helvetica, san-serif; }
+
+/* Stack the two content containers */
+.main,
+.sidebar { display:block; width:100%; }
+
+/* First breakpoint at 576px */
+/* Inherits mobile styles, but floats containers to make columns */
+@media all and (min-width: 36em){
+	.main { float: left; width:60%; }
+	.sidebar { float: left; width:40%; }
+}
+
+/* Second breakpoint at 800px */
+/* Adjusts column proportions, tweaks base H1 */
+@media all and (min-width: 50em){
+	.main { width:70%; }
+	.sidebar { width:30%; }
+
+	/* You can also tweak any other styles in a breakpoint */
+	H1 { font-size:1.2em }
+}
+.kb-list-item {margin: 8px !important;margin-bottom: 20px!important;}
+.kb-wrap {white-space: normal !important;margin-bottom: 20px!important;}
+#kb-tags li,a{margin:0px!important;}
+#kb-tags-open{width:70%}
+.kb-tag-links{text-align:right;}
+.kb-tag-link {padding:4px!important;margin-right:6px !important;}
+
+#kb-footer {text-align: center;padding:10px}
+#kb-version-switch {margin-top: 40px!important;}
+
+
+
+
+header{
+	width:100%;
+	background:#1d1f20;
+	height:50px;
+	line-height:50px;
+}
+
+#nav-icon2 {
+	width: 35px;
+	height: 26px;
+	float: right;
+	position: relative;
+	margin: 10px;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+	cursor: pointer;
+	background-color: transparent;
+}
+
+
+#nav-icon2 span {
+	display: block;
+	position: absolute;
+	height: 4px;
+	width: 50%;
+	background: #aaa;
+	opacity: 1;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .25s ease-in-out;
+	-moz-transition: .25s ease-in-out;
+	-o-transition: .25s ease-in-out;
+	transition: .25s ease-in-out;
+}
+
+#nav-icon2 span:nth-child(even) {
+	left: 50%;
+	border-radius: 0;
+}
+
+#nav-icon2 span:nth-child(odd) {
+	left:0px;
+	border-radius: 0;
+}
+
+#nav-icon2 span:nth-child(1), #nav-icon2 span:nth-child(2) {
+	top: 0px;
+}
+
+#nav-icon2 span:nth-child(3), #nav-icon2 span:nth-child(4) {
+	top: 50%;
+	margin-top: -2px;
+}
+
+#nav-icon2 span:nth-child(5), #nav-icon2 span:nth-child(6) {
+	bottom: 0;
+}
+
+#nav-icon2.open span:nth-child(1),#nav-icon2.open span:nth-child(6) {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+#nav-icon2.open span:nth-child(2),#nav-icon2.open span:nth-child(5) {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+#nav-icon2.open span:nth-child(1) {
+	left: 5px;
+	top: 5px;
+}
+
+#nav-icon2.open span:nth-child(2) {
+	left: calc(50% - 2px);
+	top: 5px;
+}
+
+#nav-icon2.open span:nth-child(3) {
+	left: -50%;
+	opacity: 0;
+}
+
+#nav-icon2.open span:nth-child(4) {
+	left: 100%;
+	opacity: 0;
+}
+
+#nav-icon2.open span:nth-child(5) {
+	left: 5px;
+	bottom: 7px;
+}
+
+#nav-icon2.open span:nth-child(6) {
+	left: calc(50% - 2px);
+	bottom: 7px;
+}
+
+.menu{
+	z-index: 1000;
+	font-weight: bold;
+	font-size: 0.8em;
+	width: 100%;
+	background: #fff;
+	position: absolute;
+	text-align: center;
+}
+.menu > ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	list-style-image: none;
+}
+.menu li {
+	display: block;
+	padding: 15px 0 15px 0;
+
+}
+.menu > ul > li {
+	border-bottom: #dadada 1px solid;
+	text-align: left;
+    padding-left: 15px;
+}
+.menu > ul > li > a {
+	text-decoration: none;
+	text-transform: uppercase;
+	margin: 0px;
+	color: #444 !important;
+}
+.menu ul li ul{
+	padding: 0;
+}
+.menu ul li ul{
+	padding-left: 20px;
+}
+.menu ul li ul li{
+	padding: 10px 0 0 0;
+	color: #888;
+}
+.menu ul li ul li a{
+	text-transform: none;
+	margin: 0px;
+	color: #444 !important;
+	text-decoration: none;
+}
+
+
+
+#kb-items-list .wrap_image .kbucket_img{
+	height: 160px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+#kb-items-list .wrap_image.no_image{
+	background-color: #dddddd;
+	position: relative;
+}
+#kb-items-list .wrap_image.no_image:before{
+	content: "?";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	height: 50px;
+	width: 50px;
+	font-size: 40px;
+	text-align: center;
+	z-index: 1;
+	color: #c8c8c8;
+	font-weight: bold;
+}
+#kb-items-list .desc{
+	overflow: auto;
+	white-space: pre-wrap;
+	text-overflow: clip;
+}
